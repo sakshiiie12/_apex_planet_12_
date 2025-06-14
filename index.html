@@ -1,156 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Form</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #6e0202;
-    }
-
-    h2{
-      color: rgb(244, 248, 248);
-      text-align: center;
-      font-size:xx-large;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      background-color:beige;
-      padding: 20px;
-      border: #060606;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(5, 0, 0, 0.1);
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 5px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #060606;
-    }
-
-    button {
-      background-color: rgb(128, 28, 0);
-      color: white;
-      cursor: pointer;
-    }
-     
-    #todoSection {
-      max-width: 500px;
-      margin: 40px auto;
-      background:beige;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    h3{
-      color: rgb(2, 70, 70);
-      text-align: center;
-      font-size:xx-large;
-    }
-    #todoSection h3 img{
-         width: 40px;
-         margin-left: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 8px 0;
-      padding: 8px;
-      background-color: #e7f3f3;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    li button {
-      width: auto;
-      background: rgb(128, 28, 0);
-      color: white;
-      padding: 4px 8px;
-      border-radius: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Web Development</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <h2>Contact Us</h2>
-  <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name" required />
-    <input type="email" id="email" placeholder="Your Email" required />
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-
- 
-  <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 50px;">
-    <div style="flex: 1 1 300px; background: bisque; padding: 20px; margin: 10px; text-align:center;">Box 1</div>
-    <div style="flex: 1 1 300px; background: bisque; padding: 20px; margin: 10px; text-align:center;">Box 2</div>
-    <div style="flex: 1 1 300px; background: bisque; padding: 20px; margin: 10px; text-align:center;">Box 3</div>
-  </div>
-
-
-  <div id="todoSection">
-    <h3>To-Do List  <img src="icon.png" ></h3>
-    <input type="text" id="todoInput" placeholder="Add new task" />
-    <button onclick="addTodo()">Add Task</button>
-    <ul id="todoList"></ul>
-  </div>
-
-  <script>
+   
+      <h1>Welcome to My Webpage</h1> 
     
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    <p>This is a simple webpage created using HTML,styled with CSS,and made interactive with JavaScript.</p>
+    <img src="img.jpg" alt="Sample Image"><br>
+    <a href="https://www.google.com/">Visit Google</a>
+    <button onclick="showMessege()">Click Here</button>
+    <script src="script.js"></script>
 
-      const email = document.getElementById("email").value;
-      const name = document.getElementById("name").value;
-      const message = document.getElementById("message").value;
-
-      if (!email || !name || !message) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (!email.match(emailPattern)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-
-      alert("Form submitted successfully!");
-      this.reset();
-    });
-
-    
-    
-    function addTodo() {
-      const input = document.getElementById("todoInput");
-      const task = input.value.trim();
-      if (task === "") return;
-
-      const li = document.createElement("li");
-      li.textContent = task;
-
-      const delBtn = document.createElement("button");
-      delBtn.textContent = "❌";
-      delBtn.onclick = () => li.remove();
-
-      li.appendChild(delBtn);
-      document.getElementById("todoList").appendChild(li);
-      input.value = "";
-    }
-  </script>
-
+    <footer>
+        <p>@apexplanet 2025</p>
+    </footer>
 </body>
 </html>
